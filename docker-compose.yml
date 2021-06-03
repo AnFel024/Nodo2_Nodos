@@ -1,0 +1,16 @@
+version: "3"
+   
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8013
+    volumes:
+      - .:/code
+    ports:
+      - "8013:8013"
+networks:
+  default:
+    external: 
+        name: bc1_default
+
+
